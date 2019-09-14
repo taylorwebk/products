@@ -1,12 +1,18 @@
 import React from 'react'
 import { ApolloProvider } from '@apollo/react-hooks'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import client from './graphql/client'
-import Login from './screens/Login/Login'
+import {
+  Home, Login
+} from './screens'
 
 const App = () => (
   <ApolloProvider client={client}>
-    <Login />
+    <Router>
+      <Route exact path="/" component={Home} />
+      <Route path="/login" component={Login} />
+    </Router>
   </ApolloProvider>
 )
 
