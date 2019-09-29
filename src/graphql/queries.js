@@ -8,6 +8,15 @@ const GET_USER = gql`
 }
 `
 
+const VALIDATION = gql`
+  {
+    validateToken {
+      id, email, edad, name, password
+    }
+  }
+`
+
 export {
-  GET_USER
+  GET_USER,
+  VALIDATION
 }
